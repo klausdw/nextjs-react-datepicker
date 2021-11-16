@@ -1,0 +1,13 @@
+{
+  "appointments": [
+    {
+      "startDate": "16.11.2021, 11:00:31",
+      "name": "Klaus Dantas Wagner",
+      "email": "klausdw@outlook.com",
+      "options": "Erstgespräch Kinderwunsch (in der Praxis)",
+      "doctor": "Dr. Jochen Wagner",
+      "bookedDate": "2021-11-16T00:45:34.107Z",
+      "id": 1
+    }
+  ]
+}
