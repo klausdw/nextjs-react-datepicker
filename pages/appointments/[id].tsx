@@ -1,17 +1,17 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
 import { useRouter } from 'next/router'
 import React, { FormEvent, useEffect } from 'react'
 import Swal from 'sweetalert2'
 import { Appointment } from '../../models/Appointment'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 
-export const getStaticProps: GetStaticProps<Appointment> = async ({ params }: any) => {
-  const appointmentId: number = params.id
+export const getStaticProps: GetStaticProps<Appointment> = async ({ params }: GetStaticPropsContext) => {
+  const appointmentId: any = params.id
   const res = await fetch(
     `https://appointmentskdw.herokuapp.com/appointments/${appointmentId}`
   )
   const appointment = await res.json()
-  console.log(appointment)
+  // console.log(appointment)
 
   return {
     props: { appointment }
