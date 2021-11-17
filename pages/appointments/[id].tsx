@@ -10,7 +10,7 @@ export const getStaticProps: GetStaticProps<Appointment> = async ({ params }: Ge
   const res = await fetch(
     `https://appointmentskdw.herokuapp.com/appointments/${appointmentId}`
   )
-  const appointment: void = await res.json()
+  const appointment: any = await res.json()
   // console.log(appointment)
 
   return {
