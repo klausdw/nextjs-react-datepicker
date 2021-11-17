@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <div>
         <DatePicker />
       </div>
-      <BookedDate />
+      {/* <BookedDate /> */}
       <footer className='w-full mx-auto text-center items-center mt-10 p-6 rounded-xl sm:p-6 lg:p-6 h-20 bg-gray-200'>
         <a
           href='https://github.com/klausdw'

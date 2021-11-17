@@ -10,19 +10,19 @@ import { render, screen, waitForElementToBeRemoved } from '@testing-library/reac
 import { Appointment } from '../models/Appointment'
 import BookedDate from '../components/BookedDate'
 
-const server = setupServer(rest.get<DefaultRequestBody, Appointment[]>('http://localhost:8000/appointments', (req, res, ctx) => {
+const server = setupServer(rest.get<DefaultRequestBody, Appointment[]>('https://appointmentskdw.herokuapp.com/appointments', (req, res, ctx) => {
     return res(
     // ctx.delay(1000),
     ctx.json([
-        // Data
-    // {
-    //     id: 1,
-    //     startDate: '10.11.2021, 11:00:39',
-    //     name: 'Klaus Dantas Wagner',
-    //     email: 'klausdw@outlook.com',
-    //     options: 'Erstgespräch Kinderwunsch (in der Praxis)',
-    //     doctor: 'Dr. Jochen Wagner'
-    //   }
+        {
+            startDate: '18.11.2021, 11:00:49',
+            name: 'Test',
+            email: 'test@test.de',
+            options: 'Erstgespräch Kinderwunsch (per Video)',
+            doctor: 'Dr. Jochen Wagner',
+            bookedDate: '2021-11-17T17:25:26.755Z',
+            id: 2
+          }
     ]))
 }))
 
@@ -35,6 +35,6 @@ describe('renders after the application is loaded', () => {
         await waitForElementToBeRemoved(() => screen.getByText('Loading...'))
     })
     it('renders the newly loaded data', () => {
-        expect(screen.getByText('Dra. Janine Stein')).toBeInTheDocument()
+        expect(screen.getByText('Dr. Jochen Wagner')).toBeInTheDocument()
     })
 })

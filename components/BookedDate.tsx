@@ -9,17 +9,11 @@ const BookedDate = () => {
   const [loading, setLoading] = useState(0)
   const [error, setError] = useState('')
 
-  // const {
-  //   error,
-  //   isPending,
-  //   data: appointments
-  // } = useFetch('http://localhost:8000/appointments')
-
   useEffect(() => {
     async function load () {
       setLoading(l => l + 1)
       try {
-        const res = await fetch('http://localhost:8000/appointments')
+        const res = await fetch('https://appointmentskdw.herokuapp.com/appointments')
         const json = await res.json()
 
         if (!res.ok) {

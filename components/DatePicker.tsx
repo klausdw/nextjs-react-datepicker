@@ -48,7 +48,7 @@ const BookingPicker = () => {
       bookedDate
     }
     console.log(appointment)
-    fetch('http://localhost:8000/appointments', {
+    fetch('https://appointmentskdw.herokuapp.com/appointments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(appointment)

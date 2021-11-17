@@ -8,7 +8,7 @@ import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 export const getStaticProps: GetStaticProps<Appointment> = async ({ params }: any) => {
   const appointmentId: number = params.id
   const res = await fetch(
-    `http://localhost:8000/appointments/${appointmentId}`
+    `https://appointmentskdw.herokuapp.com/appointments/${appointmentId}`
   )
   const appointment = await res.json()
   console.log(appointment)
@@ -41,7 +41,7 @@ const EditAppointment = ({ appointment }: { appointment: Appointment }) => {
       confirmButtonText: 'Ja, Termin stornieren!',
       icon: 'warning'
     }).then(async () => {
-      await fetch(`http://localhost:8000/appointments/${appointment.id}`, {
+      await fetch(`https://appointmentskdw.herokuapp.com/appointments/${appointment.id}`, {
         method: 'DELETE'
       }).then(() => {
         Swal.fire('Storniert!', 'Dieser Termin wurde storniert.', 'success')
