@@ -5,12 +5,12 @@ import Swal from 'sweetalert2'
 import { Appointment } from '../../models/Appointment'
 import { CalendarIcon, ClockIcon } from '@heroicons/react/outline'
 
-export const getStaticProps: GetStaticProps<GetStaticPropsContext> = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Appointment> = async ({ params }: GetStaticPropsContext<ParsedUrlQuery>) => {
   const appointmentId: any = params.id
   const res = await fetch(
     `https://appointmentskdw.herokuapp.com/appointments/${appointmentId}`
   )
-  const appointment = await res.json()
+  const appointment: void = await res.json()
   // console.log(appointment)
 
   return {
